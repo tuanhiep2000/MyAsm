@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+      <div class="container">
+            <br>
+            <h2 class="txt-views">Manage Products</h2>
+            <table>
+                  <tr>
+                        <th>
+                              <form class="form-inline my-2 my-lg-0" action="/doSearch" method="POST">
+                                    <input class="form-control mr-sm-2" type="search" placeholder="Search" name="txtName" >
+                                    <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search">
+                              </form>
+                        </th>
+                  </tr>
+                  <tr>
+                        <th>
+                              <form method="get" action="/insert" >
+                                    <button type="submit" class="btn btn-primary">Add Product</button>
+                              </form>
+                        </th>
+                  </tr>
+            </table>
+
+            <br>
+            <table class="table" border="2">
+                        <thead class="thead-dark">
+                              <tr>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Trademark</th>
+                                    <th>Bill</th>
+                                    <th>Total</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                              </tr>
+                        </thead>
+                  {{#each model}}
+                  <tbody>
+                        <tr>
+                              <td><img src="{{this.image}}" class="image-product"></td>
+                              <th>{{name}}</th>
+                              <th>{{price}}</th>
+                              <th>{{trademark}}</th>
+                              <th>{{amount}}</th>
+                              <th>{{total}}</th>
+                              <th><a href="/update?id={{_id}}">Edit</a></th>
+                              <th><a href="/delete?id={{_id}}" onclick = "return confirmDelete('{{name}}')">Delete</a></th>
+                        </tr>
+                  </tbody>
+                  {{/each}}
+            </table>
+      </div>
+      <script>
+            function confirmDelete(name) {
+                  let r = confirm('You want delete ' + name + '?');
+                  return r;
+             }
+      </script>
+</body>
+</html>

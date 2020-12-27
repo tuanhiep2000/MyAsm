@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>NewProduct</title>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      </head>
+      <body>
+            <div class="container">
+                  <h2>New Product</h2>
+                  <form action="/doInsert" method="post">
+                        <div class="form-group">
+                              <label for="image">Image:</label>
+                              <input type="url" name="txtImage" class="form-control" placeholder="Fill image" >
+                        </div>
+                        <div class="form-group">
+                              <label for="name">Name:</label>
+                              <input type="text" name="txtName" class="form-control" placeholder="Enter name" >
+                        </div>
+                        <div class="form-group">
+                              <label for="price">Price:</label>
+                              <input type="text" name="txtPrice" class="form-control" placeholder="Enter price" >
+                        </div>
+                        <div class="form-group">
+                              <label for="trademark">Trademark:</label>
+                              <input type="text" name="txtTrademark" class="form-control" placeholder="Enter trademark" >
+                        </div>
+                        <div class="form-group">
+                              <label for="bill">Total Bill:</label>
+                              <input type="text" name="txtAmount" class="form-control" placeholder="Enter total bill" >
+                        </div>
+                        <div class="form-group">
+                              <label for="totalPrice">Total Price:</label>
+                              <input type="text" name="txtTotal" class="form-control" placeholder="Enter total bill" >
+                        </div>
+                        <input type="submit" value="Create" class="btn btn-primary"> 
+                  </form>
+            </div>
+      </body>
+</html>
